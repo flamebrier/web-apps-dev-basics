@@ -56,10 +56,12 @@
 <main>
     <h1>@yield('title')</h1>
     <header>
-        @yield('create')
         <nav>
-        <a href="{{ url('queue/') }}" class="btn btn-dark text-center" role="button">Очередь</a>
-    </nav></header>
+            <a href="{{ url('/') }}" class="btn text-danger text-center" role="button">Главная</a>
+            <a href="{{ url('queue/') }}" class="btn btn-dark text-center" role="button">Очередь</a>
+        </nav>
+        @yield('create')
+        </header>
     @yield('content')
     @yield('clients')
 </main>

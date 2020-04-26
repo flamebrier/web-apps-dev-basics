@@ -50,12 +50,11 @@ class ClientsController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     * @param Request $req
+     * @param $id
      * @return void
      */
-    public function destroy(Request $req)
+    public function destroy($id)
     {
-        $id = $req->id;
         Visit::destroy($id);
         $this->index();
     }

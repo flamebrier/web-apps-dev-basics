@@ -15,16 +15,18 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($queue as $item)
-                <tr>
-                    <td>{{$num++}}</td>
-                    <td>{{ \Carbon\Carbon::parse($item->date)->format('d M Y') }}</td>
-                    <td>{{ \Carbon\Carbon::parse($item->time)->format('H:i') }}</td>
-                    <td>{{ $item->client }}</td>
-                    <td>{{ $item->telephone }}</td>
-                    <td>{{ $item->service }}</td>
-                </tr>
-            @endforeach
+            @if(session('queue'))
+                @foreach(session('queue') as $id=>$item)
+                    <tr>
+                        <td>{{$num++}}</td>
+                        <td>{{ $item['date'] }}</td>
+                        <td>{{ $item['time'] }}</td>
+                        <td>{{ $item['client'] }}</td>
+                        <td>{{ $item['telephone'] }}</td>
+                        <td>{{ $item['service'] }}</td>
+                    </tr>
+                @endforeach
+            @endif
             </tbody>
         </table>
     </div>
