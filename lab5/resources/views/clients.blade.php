@@ -40,11 +40,9 @@
                     <td>{{ $item->telephone }}</td>
                     <td>{{ $item->service }}</td>
                     <td class="btn-holder p-2">
-                        <form action="{{action('ClientsController@destroy')}}" method="get">
                         <a href="{{ url('add-to-queue/'.$item->id) }}" class="btn btn-warning btn-block text-center" title="Добавить в свою очередь">+</a>
                             <input type="hidden" name="id" value="{{$item->id}}">
-                            <button class=" btn btn-block btn-secondary text-center" type="submit" title="Удалить визит">-</button>
-                        </form>
+                            <a href="{{ url('delete/'.$item->id) }}" class=" btn btn-block btn-secondary text-center" type="submit" title="Удалить визит">-</button>
                     </td>
                 </tr>
             @endforeach

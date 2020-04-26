@@ -15,6 +15,6 @@ use App\Client;
 
 Route::get('/', 'ClientsController@index');
 Route::get('create', 'ClientsController@create');
-Route::get('delete/'.'id', 'ClientsController@destroy');
-Route::get('add-to-queue/'.'id', 'ClientsController@addToQueue');
+Route::get('delete/{id}', 'ClientsController@destroy');
+Route::get('add-to-queue/{id}', 'ClientsController@addToQueue');
 Route::get('queue/', 'ClientsController@queue');
